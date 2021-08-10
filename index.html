@@ -11,11 +11,16 @@
 </head>
 
 <body>
-    <div style="border:2px solid green; border-radius: 5px; max-width: fit-content; padding: 15px;" class="mx-auto my-5">
-        <div class="display-3">Upper Wear</div>
-        <div id="upperbody"></div>
-        <div class="display-3">Lower Wear</div>
-        <div id="lowerbody"></div>
+    <div style="border:2px solid green; border-radius: 5px; max-width: fit-content; padding: 15px; text-align: center;" class="mx-auto my-5">
+        <select id = "tshirtslist" onchange = "selectedtshirt()" >
+            <option> T-shirts </option>
+            <option> Shirts </option>
+            </select>
+        <div id="temp"></div>
+        <div class="display-3 my-3">Upper Wear</div>
+        <div id="upperbody">"</div>
+        <div class="display-3 my-3">Lower Wear</div>
+        <div id="lowerbody">"</div>
         <button class="btn btn-info " style="margin: 10px; margin-bottom: 5px;" onclick="pick_outfit()">Pick Me An Outfit!</button>
     </div>
 </body>
@@ -24,11 +29,36 @@
     var upper = document.getElementById('upperbody');
     var lower = document.getElementById('lowerbody');
     let tshirts = ["megadeth", "pink floyd", "grey with blue stripes", "camo tshirt"];
+    let shirts = ["pink ucb", "red fcuk"];
     let shorts = ["navy blue", "grey", "Beige", "red-stripes"];
+    upperindex = 0;
+
+
 
     function pick_outfit(){
-        upper.innerHTML = tshirts[Math.floor(Math.random() * tshirts.length)];
-        lower.innerHTML = shorts[Math.floor(Math.random() * shorts.length)];
+        if(upperindex==0){
+            upper.innerHTML = tshirts[Math.floor(Math.random() * tshirts.length)];
+            lower.innerHTML = shorts[Math.floor(Math.random() * shorts.length)];
+        }
+        else{
+            upper.innerHTML = shirts[Math.floor(Math.random() * shirts.length)];
+            lower.innerHTML = shorts[Math.floor(Math.random() * shorts.length)];
+        }
+    }
+
+    function selectedtshirt() {
+        var tshirtslist = document.getElementById("tshirtslist");
+        // document.getElementById("favourite").value = tshirtslist.options[tshirtslist.selectedIndex].text;
+        if(tshirtslist.selectedIndex == 0)
+        {
+            // document.getElementById('temp').innerHTML = tshirtslist.options[tshirtslist.selectedIndex].text;
+            upperindex=0;
+        }
+        else if(tshirtslist.selectedIndex == 1)
+        {
+            // document.getElementById('temp').innerHTML = tshirtslist.options[tshirtslist.selectedIndex].text;
+            upperindex=1;
+        }
     }
 </script>
 
