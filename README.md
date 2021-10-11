@@ -8,4 +8,4 @@ Personal clothes should be named and stored in the respective Arrays and user ca
 _It is a Personal project centered at solving my need. Hence, it is not very user friendly, but Changes for better are always appreciated! :)_
 
 ### Hosted At:-
-[The Website](moulikchaturvedi.me/outfit-picker)
+[The Website](https://www.moulikchaturvedi.me/outfit-picker)
